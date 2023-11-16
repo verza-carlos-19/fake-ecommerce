@@ -1,0 +1,96 @@
+:root {
+  --primario: #131415;
+  --secundario: #ffa600;
+  --terciario: #e1e1e1;
+  --cuarto: #ffa723;
+  --back: #ffffff;
+  --backsec: #000000;
+  --font1: "Ubuntu", sans-serif;
+  --font2: "Sometype Mono", monospace;
+}
+
+.cardUser {
+  border: 3px solid white;
+  border-radius: 5px;
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  scale: 1;
+  box-shadow: 5px 6px 20px 0px #ffe2a6ba, inset 0px 0px 20px 4px #ffe2a6,
+    0px 0px 1rem 0px #ffe2a62b, 1px 20px 20px 0px #000000;
+}
+.cardUser img {
+  position: relative;
+  width: 13rem;
+  top: -3rem;
+  margin-bottom: -2.7rem;
+  filter: drop-shadow(2px 4px 3px);
+  top: -43px;
+}
+.user--info {
+  border-top: 1px solid white;
+  width: 100%;
+}
+.user__info--head {
+  display: flex;
+  padding: 1rem 1rem 0 1rem;
+  justify-content: space-around;
+}
+
+.user--info img {
+  top: -3.5rem;
+  width: 4rem;
+  border-radius: 50px;
+  margin: 0;
+}
+.info__head--name {
+  width: 16rem;
+}
+.info__head--name h3 {
+  font-size: 24px;
+  text-align: center;
+}
+.user--info--body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.user__info--body p {
+  font-size: 20px;
+  text-align: start;
+  padding: 0 2rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+.info__body--stars {
+  display: flex;
+  align-items: end;
+  width: 100%;
+  padding: 0 2rem 1rem 2rem;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.star {
+  float: left;
+  cursor: pointer;
+  font-size: 30px;
+  color: #666;
+  filter: drop-shadow(0px 0px 10px black);
+}
+.star:before {
+  content: "★";
+}
+.checked {
+  color: var(--cuarto);
+  filter: drop-shadow(0px 0px 3px var(--cuarto));
+}
+.stars--rate {
+  font-size: 30px;
+}

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/cardUser.css" />
+    <link rel="stylesheet" href="./assets/css/cardProduct.css" />
+    <link rel="stylesheet" href="./assets/css/mediaQueriesGral.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,400&family=Sometype+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/imgs/logos_marcas/logo-store.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>tienda - inicio</title>
+  </head>
+  <body>
+    <header>
+      <section class="header--head">
+        <img
+          src="./assets/imgs/logos_marcas/logo-store-black.svg"
+          alt="logo"
+          class="head--logo"
+        />
+        <form class="head--search">
+          <input type="text" placeholder="Buscar" />
+          <button type="submit">
+            <span class="material-symbols-outlined"> search </span>
+          </button>
+        </form>
+        <div class="head--cart">
+          <span class="material-symbols-outlined">
+            shopping_cart
+            <span class="head__cart--bubble">5</span>
+          </span>
+          <article class="cart--shop">
+              <h2>SHOP-CART</h2>
+              <div class="products--cart">
+                <div class="cart--producto">
+                  <div class="producto__box--img">
+                    <img src="./assets/imgs/taladro.png" alt="" />
+                  </div>
+                  <div class="producto__box--info">
+                        <h3 class="title-item-cart">taladro</h3>
+                      <p class="price-item">$150.000</p>
+                  </div>
+                  <div class="producto__box--quantity">
+                    <div class="quantity-handler">
+                      <span class="material-symbols-outlined quantity-handler--remove">
+                        remove
+                      </span>
+                      <input type="num" value="1" class="quantity-handler--display" disabled />
+                      <span class="material-symbols-outlined quantity-handler--add">
+                        add
+                        </span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined quantity-handler--add">
+                    delete
+                    </span>
+                  </div>
+                <div class="cart--producto">
+                  <div class="producto__box--img">
+                    <img src="./assets/imgs/taladro.png" alt="" />
+                  </div>
+                  <div class="producto__box--info">
+                        <h3 class="title-item-cart">taladro</h3>
+                      <p class="price-item">$150.000</p>
+                  </div>
+                  <div class="producto__box--quantity">
+                    <div class="quantity-handler">
+                      <span class="material-symbols-outlined quantity-handler--remove">
+                        remove
+                      </span>
+                      <input type="num" value="1" class="quantity-handler--display" disabled />
+                      <span class="material-symbols-outlined quantity-handler--add">
+                        add
+                        </span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined">
+                    delete
+                    </span>
+                  </div>
+                <div class="cart--producto">
+                  <div class="producto__box--img">
+                    <img src="./assets/imgs/taladro.png" alt="" />
+                  </div>
+                  <div class="producto__box--info">
+                        <h3 class="title-item-cart">taladro</h3>
+                      <p class="price-item">$150.000</p>
+                  </div>
+                  <div class="producto__box--quantity">
+                    <div class="quantity-handler">
+                      <span class="material-symbols-outlined quantity-handler--remove">
+                        remove
+                      </span>
+                      <input type="num" value="1" class="quantity-handler--display" disabled />
+                      <span class="material-symbols-outlined quantity-handler--add">
+                        add
+                        </span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined">
+                    delete
+                    </span>
+                  </div>
+                </div>
+                <button class="cart--empty">
+                  empty cart
+                </button>
+              <div class="cart--total">
+                <h2>TOTAL</h2>
+                <span class="total--price">$0</span>
+                <button class="total__btn--buy">pagar</button>
+          </article>
+        </div>
+      </section>
+      <section class="header--body">
+        <nav class="body--navbar">
+          <ul class="navbar--list">
+            <li class="navbar__list--item">
+              <a href="#hero">Inicio</a>
+            </li>
+            <li class="navbar__list--item">
+              <a href="./assets/pages/products.html">productos</a>
+            </li>
+            <li class="navbar__list--item">
+              <a href="#users">opiniones</a>
+            </li>
+            <li class="navbar__list--item">
+              <a href="#contacto">contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <main>
+      <section class="main--hero" id="hero">
+        <article class="hero__box--content">
+          <h1>Potencia tu habilidad</h1>
+          <p>
+            "El lugar donde los artesanos y profesionales encuentran sus
+            herramientas perfectas"
+          </p>
+          <button class="main--productos-show btn--hero">productos</button>
+        </article>
+        <div class="hero__box--img">
+          <img src="./assets/imgs/taladro.png" alt="taladro" />
+          <h2>taladro electrico 220v</h2>
+        </div>
+      </section>
+      <section class="main--productos">
+        <h2>productos favoritos</h2>
+        <div class="main__productos--box">
+          
+        </div>
+        <button class="main--productos-show">ver mas</button>
+      </section>
+      <section class="main--sponsors">
+        <h2>nuestras marcas</h2>
+        <div class="main__sponsors--scroll">
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/lusqtoff.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/black and decker.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/stanley.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/bosch.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/bremen.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/dewalt.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/karcher.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/whurt.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/lusqtoff.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/black and decker.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/stanley.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/bosch.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/bremen.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/dewalt.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/karcher.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/whurt.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/lusqtoff.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/black and decker.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="./assets/imgs/logos_marcas/stanley.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="main--users" id="users">
+        <h2>nuestros clientes</h2>
+        <div class="main__users--box">
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_158</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Este taladro es increíble. La potencia y durabilidad son
+                  notables. Hace que mis proyectos sean más fáciles que nunca"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_186</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estas llaves son increíblemente robustas. Las utilizo para
+                  todo y nunca me han decepcionado. Son indispensables en mi
+                  caja de herramientas"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_186</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estas llaves son increíblemente robustas. Las utilizo para
+                  todo y nunca me han decepcionado. Son indispensables en mi
+                  caja de herramientas"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_186</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estas llaves son increíblemente robustas. Las utilizo para
+                  todo y nunca me han decepcionado. Son indispensables en mi
+                  caja de herramientas"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_186</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estas llaves son increíblemente robustas. Las utilizo para
+                  todo y nunca me han decepcionado. Son indispensables en mi
+                  caja de herramientas"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_186</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estas llaves son increíblemente robustas. Las utilizo para
+                  todo y nunca me han decepcionado. Son indispensables en mi
+                  caja de herramientas"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_274</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estos destornilladores son precisos y cómodos de usar. Las
+                  puntas intercambiables son geniales. Me han ayudado mucho en
+                  reparaciones de electrónica"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star"></label>
+                    <label class="star"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_274</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estos destornilladores son precisos y cómodos de usar. Las
+                  puntas intercambiables son geniales. Me han ayudado mucho en
+                  reparaciones de electrónica"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star"></label>
+                    <label class="star"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_274</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estos destornilladores son precisos y cómodos de usar. Las
+                  puntas intercambiables son geniales. Me han ayudado mucho en
+                  reparaciones de electrónica"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star"></label>
+                    <label class="star"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cardUser">
+            <img src="./assets/imgs/taladro.png" alt="taladro" />
+            <div class="user--info">
+              <div class="user__info--head">
+                <img src="./assets/imgs/user.jpg" alt="user" />
+                <div class="info__head--name">
+                  <h3>carlos_verza_274</h3>
+                </div>
+              </div>
+              <div class="user__info--body">
+                <p>
+                  "Estos destornilladores son precisos y cómodos de usar. Las
+                  puntas intercambiables son geniales. Me han ayudado mucho en
+                  reparaciones de electrónica"
+                </p>
+                <div class="info__body--stars">
+                  <div class="stars">
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star checked"></label>
+                    <label class="star"></label>
+                    <label class="star"></label>
+                  </div>
+                  <span class="stars--rate"> 4 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main--contacto" id="contacto">
+        <h2>contactanos</h2>
+        <form class="main__contacto--form">
+          <input type="text" placeholder="nombre" />
+          <input type="tel" placeholder="telefono" />
+          <input type="text" name="" id="" placeholder="motivo" />
+          <textarea placeholder="mensaje"></textarea>
+          <button>enviar</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="footer--content">
+        <img src="./assets/imgs/logos_marcas/logo-store-black.svg" alt="logo" />
+        <div class="box--redes">
+          <h2>seguinos en</h2>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          © 2023 Todos los Derechos Reservados. <br />
+        </p>
+      </div>
+    </footer>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

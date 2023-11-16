@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/products.css" />
+    <link rel="stylesheet" href="../css/cardProduct.css" />
+    <link rel="stylesheet" href="../css/mediaQueriesproducts.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Kanit:wght@200;300;400&family=Kay+Pho+Du:wght@400;500&family=Play:wght@400;700&family=Roboto:wght@300;400;500;700&family=Titillium+Web:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>productos</title>
+  </head>
+  <body>
+    <header>
+      <section class="header--head">
+        <img
+          src="../imgs/logos_marcas/logo-store-black.svg"
+          alt="logo"
+          class="head--logo"
+        />
+        <form class="head--search">
+          <input type="text" placeholder="Buscar" />
+          <button type="submit">
+            <span class="material-symbols-outlined"> search </span>
+          </button>
+        </form>
+        <div class="head--cart">
+          <span class="material-symbols-outlined">
+            shopping_cart
+            <span class="head__cart--bubble">5</span>
+          </span>
+          <article class="cart--shop">
+              <h2>SHOP-CART</h2>
+              <div class="products--cart">
+                <div class="cart--producto">
+                  <div class="producto__box--img">
+                    <img src="./assets/imgs/taladro.png" alt="" />
+                  </div>
+                  <div class="producto__box--info">
+                        <h3 class="title-item-cart">taladro</h3>
+                      <p class="price-item">$150.000</p>
+                  </div>
+                  <div class="producto__box--quantity">
+                    <div class="quantity-handler">
+                      <span class="material-symbols-outlined quantity-handler--remove">
+                        remove
+                      </span>
+                      <input type="num" value="1" class="quantity-handler--display" disabled />
+                      <span class="material-symbols-outlined quantity-handler--add">
+                        add
+                        </span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined quantity-handler--add">
+                    delete
+                    </span>
+                  </div>
+                <div class="cart--producto">
+                  <div class="producto__box--img">
+                    <img src="./assets/imgs/taladro.png" alt="" />
+                  </div>
+                  <div class="producto__box--info">
+                        <h3 class="title-item-cart">taladro</h3>
+                      <p class="price-item">$150.000</p>
+                  </div>
+                  <div class="producto__box--quantity">
+                    <div class="quantity-handler">
+                      <span class="material-symbols-outlined quantity-handler--remove">
+                        remove
+                      </span>
+                      <input type="num" value="1" class="quantity-handler--display" disabled />
+                      <span class="material-symbols-outlined quantity-handler--add">
+                        add
+                        </span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined">
+                    delete
+                    </span>
+                  </div>
+                <div class="cart--producto">
+                  <div class="producto__box--img">
+                    <img src="./assets/imgs/taladro.png" alt="" />
+                  </div>
+                  <div class="producto__box--info">
+                        <h3 class="title-item-cart">taladro</h3>
+                      <p class="price-item">$150.000</p>
+                  </div>
+                  <div class="producto__box--quantity">
+                    <div class="quantity-handler">
+                      <span class="material-symbols-outlined quantity-handler--remove">
+                        remove
+                      </span>
+                      <input type="num" value="1" class="quantity-handler--display" disabled />
+                      <span class="material-symbols-outlined quantity-handler--add">
+                        add
+                        </span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined">
+                    delete
+                    </span>
+                  </div>
+                </div>
+                <button class="cart--empty">
+                  empty cart
+                </button>
+              <div class="cart--total">
+                <h2>TOTAL</h2>
+                <span class="total--price">$0</span>
+                <button class="total__btn--buy">pagar</button>
+          </article>
+        </div>
+      </section>
+      <section class="header--body">
+        <nav class="body--navbar">
+          <ul class="navbar--list">
+            <li class="navbar__list--item">
+              <a href="../../index.html">Inicio</a>
+            </li>
+            <li class="navbar__list--item">
+              <a href="../../index.html#users">opiniones</a>
+            </li>
+            <li class="navbar__list--item">
+              <a href="../../index.html#contacto">contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <main>
+      <section class="productos">
+        <article class="box--filtros">
+          <div class="filtro--price">
+            <h3>filtrar por precio:</h3>
+            <input type="checkbox" name="" id="priceless" />
+            <label for="priceless">menor precio</label>
+            <input type="checkbox" name="" id="priceup" />
+            <label for="priceup">mayor precio</label>
+          </div>
+          <div class="filtro--brand">
+            <h3>filtrar por marca:</h3>
+            <div class="marcas">
+              <input type="checkbox" name="" id="lusqtoff" />
+              <label for="lusqtoff"
+                ><img src="../imgs/logos_marcas/lusqtoff.svg" alt=""
+              /></label>
+              <input type="checkbox" name="" id="stanley" />
+              <label for="stanley"
+                ><img src="../imgs/logos_marcas/stanley.png" alt=""
+              /></label>
+              <input type="checkbox" name="" id="bosch" />
+              <label for="bosch"
+                ><img src="../imgs/logos_marcas/bosch.svg" alt=""
+              /></label>
+              <input type="checkbox" name="" id="karcher" />
+              <label for="karcher"
+                ><img src="../imgs/logos_marcas/karcher.svg" alt=""
+              /></label>
+              <input type="checkbox" name="" id="bremen" />
+              <label for="bremen"
+                ><img src="../imgs/logos_marcas/bremen.svg" alt=""
+              /></label>
+              <input type="checkbox" name="" id="black" />
+              <label for="black"
+                ><img src="../imgs/logos_marcas/black and decker.png" alt=""
+              /></label>
+              <input type="checkbox" name="" id="deWalt" />
+              <label for="deWalt"
+                ><img src="../imgs/logos_marcas/dewalt.png" alt=""
+              /></label>
+              <input type="checkbox" name="" id="whurt" />
+              <label for="whurt"
+                ><img src="../imgs/logos_marcas/whurt.svg" alt=""
+              /></label>
+            </div>
+          </div>
+          <div class="filtro--category">
+            <h3>filtrar por categoria:</h3>
+            <select name="combobox" id="combobox">
+              <option value="todos">todas</option>
+              <option value="hidrolavadoras">hidrolavadoras</option>
+              <option value="herramientas manuales">
+                herramientas manuales
+              </option>
+              <option value="herramientas a bateria">
+                herramientas a bateria
+              </option>
+              <option value="herramientas electricas">
+                herramientas electricas
+              </option>
+              <option value="compresores y neumaticas">
+                compresores y neumaticas
+              </option>
+            </select>
+          </div>
+          <div class="filtro--rating">
+            <h3>filtrar por rating:</h3>
+            <input type="checkbox" name="" id="rateless" />
+            <label for="rateless">menor rating</label>
+            <input type="checkbox" name="" id="rateup" />
+            <label for="rateup">mayor rating</label>
+          </div>
+          <button class="btn--filtrar">filtrar</button>
+        </article>
+        <div class="box--productos">
+          <div class="productos--container"></div>
+          <button class="showMoreBtn">ver mas</button>
+        </div>
+      </section>
+      <section class="main--sponsors">
+        <h2>nuestras marcas</h2>
+        <div class="main__sponsors--scroll">
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/lusqtoff.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/black and decker.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/bremen.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/bosch.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/dewalt.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/karcher.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/stanley.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/whurt.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/lusqtoff.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/black and decker.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/bremen.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/bosch.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/dewalt.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/karcher.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/stanley.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/whurt.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/lusqtoff.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/black and decker.png"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+          <div class="sponsor">
+            <img
+              src="../imgs/logos_marcas/bremen.svg"
+              loading="lazy"
+              alt="logo"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer--content">
+        <img src="../imgs/logos_marcas/logo-store-black.svg" alt="logo" />
+        <div class="box--redes">
+          <h2>seguinos en</h2>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a
+          ><a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2023 Todos los Derechos Reservados. <br /></p>
+      </div>
+    </footer>
+    <script src="../js/appProducts.js" type="module"></script>
+  </body>
+</html>
