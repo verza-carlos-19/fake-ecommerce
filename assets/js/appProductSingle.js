@@ -1,53 +1,45 @@
+import ShopCart from "./cartLogic.js";
 import { appState, productsData } from "./data.js";
 import { renderProducts } from "./renderProduct.js";
+import { initProducts, obtenerNumeroAleatorio } from "./utils.js";
 
 const containerProds = document.querySelector(".main__productos--box");
 const containerProduct = document.querySelector(".container--product");
 const params = new URLSearchParams(window.location.search);
-const idProduct = params.get("id") - 1;
-
-const guardarLocalStorage = (id) => {
-  localStorage.setItem("ultimaProducto", JSON.stringify(id));
-};
-const obtenerNumeroAleatorio = () => {
-  let numeroAleatorio = Math.floor(Math.random() * 6) + 1;
-  return numeroAleatorio;
-};
-
-const goProduct = (e) => {
-  if (!e.target.classList.contains("card--btnsmd")) return;
-  const product = e.target.dataset;
-  console.log(product.id);
-  renderPage(product.id - 1);
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-};
+const idProduct = params.get("id");
+const headerBox = document.querySelector(".header--head");
+const shopCart = document.querySelector(".cart--shop");
+const cartBubble = document.querySelector(".head__cart--bubble");
+const cartContainer = document.querySelector(".products--cart");
+const cartCleaner = document.querySelector(".cart--empty");
+const cartBuyer = document.querySelector(".total__btn--buy");
+const totalCart = document.querySelector(".total--price");
+const carrito = new ShopCart(
+  headerBox,
+  shopCart,
+  cartContainer,
+  cartCleaner,
+  totalCart,
+  cartBubble,
+  cartBuyer,
+  true
+);
 
 const renderPage = (id) => {
-  renderProducts(productsData[id], containerProduct, true, true);
-  if (id >= 0 && id <= 2) {
-    containerProds.innerHTML = "";
-    renderProducts(
-      appState.productsShorts[obtenerNumeroAleatorio()],
-      containerProds,
-      true,
-      false
-    );
-  } else {
-    containerProds.innerHTML = "";
-    renderProducts(appState.productsShorts[0], containerProds, true, false);
-  }
+  const product = productsData.find((item) => item.id === Number(id));
+  renderProducts(product, containerProduct, true);
+  const title = product.title;
+  document.title = `${title}`;
+  containerProds.innerHTML = "";
+  renderProducts(
+    appState.productsShorts[obtenerNumeroAleatorio()],
+    containerProds
+  );
 };
 
 const init = () => {
-  containerProds.addEventListener("click", goProduct);
-  console.log(idProduct);
-  console.log(productsData[idProduct]);
-  // const { title, images, price } = productsData[idProduct];
-  // const portada = images[0];
-  // containerProduct.innerHTML = `<img src="${portada}" alt="${title}" />`;
+  containerProds.addEventListener("click", initProducts);
   renderPage(idProduct);
+  carrito.initCart();
 };
 init();

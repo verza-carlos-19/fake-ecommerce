@@ -240,7 +240,7 @@ export const productsData = [
   {
     id: 12,
     title:
-      'A    moladora Angular + Caja Plástica + 2 Accesorios 4-1/2" (115mm) - 820W',
+      'Amoladora Angular + Caja Plástica + 2 Accesorios 4-1/2" (115mm) - 820W',
     images: [
       "./assets/imgs/img_productos/productos12/pr (1).png",
       "./assets/imgs/img_productos/productos12/pr (2).png",

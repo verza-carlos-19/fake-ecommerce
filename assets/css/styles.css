@@ -28,7 +28,7 @@ body {
   /* background-color: var(--primario); */
   width: 100%;
   background: rgba(29, 31, 32, 0.904)
-    radial-gradient(rgba(255, 255, 255, 0.712) 10%, transparent 1%);
+    radial-gradient(rgba(255, 255, 255, 0.412) 10%, transparent 1%);
 
   background-size: 11px 11px;
 }
@@ -100,6 +100,9 @@ header {
   display: flex;
   color: white;
 }
+.head--cart span {
+  cursor: pointer;
+}
 span.head__cart--bubble {
   position: relative;
   top: -1.3rem;
@@ -111,11 +114,8 @@ span.head__cart--bubble {
   border-radius: 50px;
 }
 /*------------------- estilos header--cart--------------------- */
-.show--cart {
-  transform: translateX(0%);
-  opacity: 1;
-}
-article.cart--shop {
+
+.cart--shop {
   position: absolute;
   height: 100vh;
   display: flex;
@@ -132,16 +132,23 @@ article.cart--shop {
     rgba(0, 0, 0, 0.36878501400560226) 94%,
     rgba(0, 0, 0, 0) 100%
   );
-  width: 30rem;
+  width: 35rem;
   padding: 1rem 1rem 1rem 5rem;
   right: 0;
+  gap: 0.5rem;
   top: 0;
+}
+.show--cart {
+  transform: translateX(0%);
+  opacity: 1;
 }
 .products--cart {
   width: 100%;
   display: flex;
   gap: 1.5rem;
   flex-direction: column;
+  overflow-y: auto;
+  padding: 2rem 0.5rem;
 }
 .cart--producto {
   border: 1px solid;
@@ -152,6 +159,16 @@ article.cart--shop {
   box-shadow: 0px 0px 9px white, inset 0px 0px 5px white;
   align-items: center;
   justify-content: space-between;
+}
+.title--cart span {
+  font-size: 2rem;
+}
+.title--cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
 }
 .producto__box--img {
   width: 30%;
@@ -169,7 +186,9 @@ h3.title-item-cart {
 }
 p.price-item {
   font-size: 1.2rem;
+  overflow: hidden;
   padding: 0;
+  text-overflow: ellipsis;
 }
 .producto__box--quantity {
   width: 20%;
@@ -233,6 +252,26 @@ button.total__btn--buy:hover {
   border: 1px solid white;
   box-shadow: 0 0 17px white, inset 0 0 4px white;
 }
+.toarts {
+  position: absolute;
+  left: -55vw;
+  bottom: 2rem;
+  border: 1px solid white;
+  padding: 0.7rem;
+  border-radius: 4px;
+  background: #000000;
+  box-shadow: 0px 0px 30px -9px white, inset 0px -7px 20px -12px white;
+  animation: fadeUp 2s 1 linear;
+}
+.toarts p {
+  padding: 0.2rem 0.5rem;
+  font-size: 1.4rem;
+  font-family: var(--font6);
+  color: white;
+  filter: drop-shadow(0px 0px 20px #d0ffec);
+  text-transform: capitalize;
+}
+
 /*------------------- estilos header--body--------------------- */
 .header--body {
   padding: 1rem 1rem 0rem 1rem;
@@ -550,5 +589,21 @@ footer img {
   }
   100% {
     transform: translateX(calc(-23.5rem * 3));
+  }
+}
+@keyframes fadeUp {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-0.7rem);
+  }
+  100% {
+    transform: translateY(-1rem);
+    opacity: 0;
   }
 }

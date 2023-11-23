@@ -57,6 +57,7 @@ button.card--btn {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  /* backdrop-filter: blur(0.5px); */
   justify-content: space-between;
   /* height: fit-content; */
 }
