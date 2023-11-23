@@ -1,4 +1,5 @@
-import JSConfetti from "../../node_modules/js-confetti/dist/es/index.js";
+// import JSConfetti from "";
+import JSConfetti from "js-confetti";
 import { productsData } from "./data.js";
 import { createCartProductTemplate } from "./renderProduct.js";
 import { formatPrice } from "./utils.js";
