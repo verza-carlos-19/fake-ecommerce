@@ -10,10 +10,9 @@ export const createCartProductTemplate = (cartProduct) => {
   const { id, quantity } = cartProduct;
   const product = productsData.find((item) => item.id === Number(id));
   const image = product.images[0];
-  // const image = formatImage(product.images[0], propi);
   const title = product.title;
   const stock = product.stock;
-  const precio = formatPrice(product.price);
+  const precio = formatPrice(product.price * quantity);
   return `
                 <div class="cart--producto">
                   <div class="producto__box--img">
@@ -76,7 +75,7 @@ const createTemplateProductSingle = (product) => {
         </span>
     </div>
   </div> 
-  <button class="btn--add" data-id='${id}'>comprar</button>
+  <button class="btn--add card--buttonbuy" data-id='${id}'>comprar</button>
 </div>`;
   return template;
 };

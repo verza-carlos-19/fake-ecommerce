@@ -55,13 +55,13 @@ article.product__head--info {
   gap: 0.5rem;
 }
 .product__head--info li {
-  color: var(--secundario);
-  /* font-family: var(--font); */
+  color: #ffffff;
+  font-family: var(--font7);
   font-size: 18px;
   list-style-position: inside;
 }
 .product__head--info span {
-  font-size: 2rem;
+  font-size: 3rem;
   padding-left: 2.5rem;
 }
 

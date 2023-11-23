@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Kanit:wght@200;300;400&family=Kay+Pho+Du:wght@400;500&family=Play:wght@400;700&family=Roboto:wght@300;400;500;700&family=Titillium+Web:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -49,10 +49,16 @@
           class="head--logo"
         />
         <form class="head--search">
-          <input type="text" placeholder="Buscar" />
+          <input
+            type="text"
+            placeholder="Buscar"
+            value=""
+            class="head--search--input"
+          />
           <button type="submit">
             <span class="material-symbols-outlined"> search </span>
           </button>
+          <div class="display--results"></div>
         </form>
         <div class="head--cart">
           <span class="material-symbols-outlined btn--cart">

@@ -50,21 +50,3 @@ export const goProductSingle = (id) => {
   const urlDestino = "./productSingle.html?" + queryParams;
   window.location.href = urlDestino;
 };
-
-const buyProduct = (e) => {
-  const id = e.target.dataset.id;
-  carrito.buyItem(id);
-};
-const goProduct = (e) => {
-  const id = e.target.dataset.id;
-  goProductSingle(id, false);
-};
-export const initProducts = (e) => {
-  if (e.target.classList.contains("card--btnsmd")) {
-    goProduct(e);
-  } else if (e.target.classList.contains("card--buttonbuy")) {
-    buyProduct(e);
-  } else {
-    return;
-  }
-};

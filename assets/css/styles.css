@@ -95,6 +95,49 @@ header {
   border-bottom: 2px solid white;
   border-right: 2px solid white;
 }
+.header--head input:focus ~ .display--results {
+  display: flex;
+}
+
+.display--results:hover {
+  display: flex;
+}
+.display--results {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: -14px;
+  top: 64px;
+  left: 0;
+  margin: auto;
+  border: 2px solid white;
+  border-bottom: 0;
+  width: 504px;
+  overflow: auto;
+  background: #000000;
+  height: fit-content;
+  max-height: 90vh;
+}
+.searcher--card {
+  border-bottom: 2px solid white;
+  padding: 0.5rem;
+  display: flex;
+  box-shadow: inset 0px 0px 9px white;
+  align-items: center;
+}
+.display--results img {
+  width: 4rem;
+  height: 4rem;
+}
+.display--results p {
+  padding: 0;
+  font-size: 1rem;
+  text-transform: lowercase;
+  padding: 0.4rem;
+  text-align: start;
+  color: white;
+}
+
 .head--cart {
   width: 5%;
   display: flex;
