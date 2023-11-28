@@ -6,6 +6,16 @@ import {
   createListCaracts,
 } from "./utils.js";
 
+export const createDiplayProductTemplate = (product) => {
+  const id = product.id;
+  const image = product.images[0];
+  const title = product.title;
+  const price = formatPrice(product.price);
+  return `<div class="searcher--card" data-id="${id}" >
+  <img class="searcher--img" data-id="${id}"src="${image}" alt="${title}">
+  <p class="searcher--p" data-id="${id}">${title} - Precio: ${price}</p>
+  </div>`;
+};
 export const createCartProductTemplate = (cartProduct) => {
   const { id, quantity } = cartProduct;
   const product = productsData.find((item) => item.id === Number(id));
@@ -79,8 +89,8 @@ const createTemplateProductSingle = (product) => {
 </div>`;
   return template;
 };
-const createTemplateProduct = (product, prop) => {
-  const { title, images, price, id } = product;
+const createTemplateProduct = (product) => {
+  const { title, images, price, id, stock } = product;
   const precio = formatPrice(price);
   const portada = images[0];
 
@@ -92,7 +102,7 @@ const createTemplateProduct = (product, prop) => {
       <h3>${title}</h3>
       <span>${precio}</span>
       <div class="card--btns">
-        <button class="card--btn card--buttonbuy" data-id='${id}'>comprar</button
+        <button class="card--btn card--buttonbuy" data-id='${id}' data-stock='${stock}'>comprar</button
         ><button class="card--btn card--btnsmd" data-id='${id}'>detalles</button>
       </div>
     </div>

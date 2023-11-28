@@ -1,8 +1,7 @@
-// import JSConfetti from "";
-import JSConfetti from "js-confetti";
+import JSConfetti from "../../node_modules/js-confetti/dist/es/index.js";
 import { productsData } from "./data.js";
 import { createCartProductTemplate } from "./renderProduct.js";
-import { formatPrice } from "./utils.js";
+import { formatPrice, showToarts } from "./utils.js";
 
 class ShopCart {
   constructor(
@@ -36,10 +35,7 @@ class ShopCart {
       (item) => item.id === String(id)
     );
     if (existingCartProduct.quantity === Number(stock)) {
-      this.cartContainer.innerHTML += `<div class="toarts"><p class="">No hay mas stock de este producto</p></div>`;
-      setTimeout(() => {
-        this.updateCartState();
-      }, 2000);
+      showToarts(this.cartContainer, "No hay mas stock de este producto");
       return;
     }
     this.addUnitToProduct(existingCartProduct.id);
@@ -78,14 +74,18 @@ class ShopCart {
       return;
     }
   };
+  getItemByArray(id) {
+    return productsData.find((item) => item.id === Number(id));
+  }
   getCartTotal() {
-    return this.cart.reduce(
-      (acc, cur) => acc + Number(productsData[cur.id - 1].price) * cur.quantity,
+    const precio = this.cart.reduce(
+      (acc, cur) =>
+        acc + Number(this.getItemByArray(cur.id).price) * cur.quantity,
       0
     );
+    return precio;
   }
 
-  // Funcion para mostrar el total del carrito
   showCartTotal() {
     const precio = formatPrice(this.getCartTotal());
     this.totalCart.innerHTML = `${precio}`;
@@ -103,10 +103,7 @@ class ShopCart {
   };
   buyCartItems = () => {
     if (!this.cart.length) {
-      this.cartContainer.innerHTML += `<div class="toarts"><p>agregue un producto por favor</p></div>`;
-      setTimeout(() => {
-        this.updateCartState();
-      }, 2000);
+      showToarts(this.cartContainer, "agregue un producto en el carrito");
       return;
     }
     setTimeout(() => {
@@ -151,15 +148,16 @@ class ShopCart {
     this.showCartTotal();
     this.saveCart();
   }
-  buyItem(id) {
+  buyItem(id, stock) {
     if (this.isExistingCartProduct(id)) {
-      this.addUnitToProduct(id);
+      this.handlePlusBtnEvent(id, stock);
+      return;
     } else {
       this.createCartProduct(id);
+      this.updateCartState();
     }
-    this.updateCartState();
   }
-  initCart() {
+  init() {
     this.updateCartState();
     this.headerBox.addEventListener("click", this.toggleCart);
     this.cartContainer.addEventListener("click", this.quantityHandler);

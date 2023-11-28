@@ -36,10 +36,11 @@
           class="head--logo"
         />
         <form class="head--search">
-          <input type="text" placeholder="Buscar" />
+          <input type="text" placeholder="Buscar" class="head--search--input" />
           <button type="submit">
             <span class="material-symbols-outlined"> search </span>
           </button>
+          <div class="display--results"></div>
         </form>
         <div class="head--cart">
           <span class="material-symbols-outlined btn--cart">
@@ -82,48 +83,139 @@
         <article class="box--filtros">
           <div class="filtro--price">
             <h3>ordenar por precio:</h3>
-            <input type="checkbox" name="" id="priceless" />
-            <label for="priceless">menor precio</label>
-            <input type="checkbox" name="" id="priceup" />
-            <label for="priceup">mayor precio</label>
+            <div class="filter">
+              <input
+                type="checkbox"
+                class="price-filter priceless orderer"
+                name=""
+                id="priceless"
+              />
+              <label for="priceless">menor precio</label>
+            </div>
+            <div class="filter">
+              <input
+                type="checkbox"
+                name=""
+                id="priceup"
+                class="price-filter priceup orderer"
+              />
+              <label for="priceup">mayor precio</label>
+            </div>
+          </div>
+          <div class="filtro--rating">
+            <h3>ordenar por rating:</h3>
+            <div class="filter">
+              <input
+                type="checkbox"
+                name=""
+                id="rateless"
+                class="rate-filter rateless orderer"
+              />
+              <label for="rateless">menor rating</label>
+            </div>
+            <div class="filter">
+              <input
+                type="checkbox"
+                name=""
+                id="rateup"
+                class="rate-filter rateup orderer"
+              />
+              <label for="rateup">mayor rating</label>
+            </div>
           </div>
           <div class="filtro--brand">
             <h3>filtrar por marca:</h3>
             <div class="marcas">
-              <input type="checkbox" name="" id="lusqtoff" />
-              <label for="lusqtoff"
-                ><img src="./assets/imgs/logos_marcas/lusqtoff.svg" alt=""
-              /></label>
-              <input type="checkbox" name="" id="stanley" />
-              <label for="stanley"
-                ><img src="./assets/imgs/logos_marcas/stanley.png" alt=""
-              /></label>
-              <input type="checkbox" name="" id="bosch" />
-              <label for="bosch"
-                ><img src="./assets/imgs/logos_marcas/bosch.svg" alt=""
-              /></label>
-              <input type="checkbox" name="" id="karcher" />
-              <label for="karcher"
-                ><img src="./assets/imgs/logos_marcas/karcher.svg" alt=""
-              /></label>
-              <input type="checkbox" name="" id="bremen" />
-              <label for="bremen"
-                ><img src="./assets/imgs/logos_marcas/bremen.svg" alt=""
-              /></label>
-              <input type="checkbox" name="" id="black" />
-              <label for="black"
-                ><img
-                  src="./assets/imgs/logos_marcas/black and decker.png"
-                  alt=""
-              /></label>
-              <input type="checkbox" name="" id="deWalt" />
-              <label for="deWalt"
-                ><img src="./assets/imgs/logos_marcas/dewalt.png" alt=""
-              /></label>
-              <input type="checkbox" name="" id="whurt" />
-              <label for="whurt"
-                ><img src="./assets/imgs/logos_marcas/whurt.svg" alt=""
-              /></label>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  value="lusqtoff"
+                  id="lusqtoff"
+                />
+                <label for="lusqtoff"
+                  ><img src="./assets/imgs/logos_marcas/lusqtoff.svg" alt=""
+                /></label>
+              </div>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  id="stanley"
+                  value="stanley"
+                />
+                <label for="stanley"
+                  ><img src="./assets/imgs/logos_marcas/stanley.png" alt=""
+                /></label>
+              </div>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  id="bosch"
+                  value="bosch"
+                />
+                <label for="bosch"
+                  ><img src="./assets/imgs/logos_marcas/bosch.svg" alt=""
+                /></label>
+              </div>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  id="karcher"
+                  value="karcher"
+                />
+                <label for="karcher"
+                  ><img src="./assets/imgs/logos_marcas/karcher.svg" alt=""
+                /></label>
+              </div>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  id="bremen"
+                  value="bremen"
+                />
+                <label for="bremen"
+                  ><img src="./assets/imgs/logos_marcas/bremen.svg" alt=""
+                /></label>
+              </div>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  id="black"
+                  value="black and decker"
+                />
+                <label for="black"
+                  ><img
+                    src="./assets/imgs/logos_marcas/black and decker.png"
+                    alt=""
+                /></label>
+              </div>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  id="deWalt"
+                  value="dewalt"
+                />
+                <label for="deWalt"
+                  ><img src="./assets/imgs/logos_marcas/dewalt.png" alt=""
+                /></label>
+              </div>
+              <div class="brand">
+                <input
+                  type="checkbox"
+                  class="brandFilter"
+                  id="whurt"
+                  value="whurt"
+                />
+                <label for="whurt"
+                  ><img src="./assets/imgs/logos_marcas/whurt.svg" alt=""
+                /></label>
+              </div>
             </div>
           </div>
           <div class="filtro--category">
@@ -145,13 +237,7 @@
               </option>
             </select>
           </div>
-          <div class="filtro--rating">
-            <h3>ordenar por rating:</h3>
-            <input type="checkbox" name="" id="rateless" />
-            <label for="rateless">menor rating</label>
-            <input type="checkbox" name="" id="rateup" />
-            <label for="rateup">mayor rating</label>
-          </div>
+
           <button class="btn--filtrar">filtrar</button>
         </article>
         <div class="box--productos">

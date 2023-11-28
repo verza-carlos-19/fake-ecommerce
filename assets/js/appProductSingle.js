@@ -1,6 +1,7 @@
 import ShopCart from "./cartLogic.js";
 import { appState, productsData } from "./data.js";
 import { renderProducts } from "./renderProduct.js";
+import SearcherProds from "./searchLogic.js";
 import { obtenerNumeroAleatorio } from "./utils.js";
 
 const containerProds = document.querySelector(".main__productos--box");
@@ -12,6 +13,10 @@ const cartContainer = document.querySelector(".products--cart");
 const cartCleaner = document.querySelector(".cart--empty");
 const cartBuyer = document.querySelector(".total__btn--buy");
 const totalCart = document.querySelector(".total--price");
+const searchForm = document.querySelector(".head--search");
+const searchInput = document.querySelector(".head--search--input");
+const searchDisplay = document.querySelector(".display--results");
+const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const params = new URLSearchParams(window.location.search);
 const idProduct = params.get("id");
 const carrito = new ShopCart(
@@ -56,6 +61,7 @@ const initProducts = (e) => {
 const init = () => {
   document.addEventListener("click", initProducts);
   renderPage(idProduct);
-  carrito.initCart();
+  carrito.init();
+  searcher.init();
 };
 init();

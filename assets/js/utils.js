@@ -50,3 +50,17 @@ export const goProductSingle = (id) => {
   const urlDestino = "./productSingle.html?" + queryParams;
   window.location.href = urlDestino;
 };
+export const showToarts = (container, msg) => {
+  const toarst = document.createElement("div");
+  toarst.classList.add("toarts");
+  toarst.innerHTML = `<p>${msg}</p>`;
+  container.appendChild(toarst);
+  setTimeout(() => {
+    container.removeChild(toarst);
+  }, 2000);
+  return;
+};
+export const goProduct = (e) => {
+  const id = e.target.dataset.id;
+  goProductSingle(id, false);
+};

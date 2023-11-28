@@ -17,6 +17,7 @@ export const productsData = [
     price: 138799,
     stock: 40,
     brand: "lusqtoff",
+    rate: 10,
     category: "hidrolavadoras",
   },
   {
@@ -31,6 +32,7 @@ export const productsData = [
     price: 50000,
     stock: 80,
     brand: "stanley",
+    rate: 10,
     category: "herramientas manuales",
   },
   {
@@ -56,6 +58,7 @@ export const productsData = [
     price: 119999,
     stock: 60,
     brand: "lusqtoff",
+    rate: 9,
     category: "herramientas a bateria",
   },
   {
@@ -81,6 +84,7 @@ export const productsData = [
     price: 1504886,
     stock: 20,
     brand: "lusqtoff",
+    rate: 8,
     category: "compresores y neumaticas",
   },
   {
@@ -112,6 +116,7 @@ export const productsData = [
     price: 390000,
     stock: 40,
     brand: "lusqtoff",
+    rate: 6,
     category: "soldadura",
   },
   {
@@ -135,6 +140,7 @@ export const productsData = [
     price: 31000,
     stock: 100,
     brand: "bremen",
+    rate: 7,
     category: "soldadura",
   },
   {
@@ -154,6 +160,7 @@ export const productsData = [
     price: 91500,
     stock: 30,
     brand: "bremen",
+    rate: 9,
     category: "compresores y neumaticas",
   },
   {
@@ -176,6 +183,7 @@ export const productsData = [
     price: 20500,
     stock: 40,
     brand: "bremen",
+    rate: 8,
     category: "compresores y neumaticas",
   },
   {
@@ -194,6 +202,7 @@ export const productsData = [
     price: 60000,
     stock: 50,
     brand: "bremen",
+    rate: 8,
     category: "compresores y neumaticas",
   },
   {
@@ -215,6 +224,7 @@ export const productsData = [
     price: 49000,
     stock: 60,
     brand: "black and decker",
+    rate: 8,
     category: "herramientas electricas",
   },
   {
@@ -235,6 +245,7 @@ export const productsData = [
     price: 348800,
     stock: 60,
     brand: "black and decker",
+    rate: 8,
     category: "herramientas electricas",
   },
   {
@@ -259,6 +270,7 @@ export const productsData = [
     price: 49500,
     stock: 70,
     brand: "black and decker",
+    rate: 8,
     category: "herramientas electricas",
   },
   {
@@ -281,6 +293,7 @@ export const productsData = [
     price: 78000,
     stock: 30,
     brand: "black and decker",
+    rate: 5,
     category: "herramientas electricas",
   },
   {
@@ -302,6 +315,7 @@ export const productsData = [
     price: 110000,
     stock: 50,
     brand: "black and decker",
+    rate: 7,
     category: "hidrolavadoras",
   },
   {
@@ -328,6 +342,7 @@ export const productsData = [
     price: 160000,
     stock: 30,
     brand: "black and decker",
+    rate: 5,
     category: "hidrolavadoras",
   },
   {
@@ -346,6 +361,7 @@ export const productsData = [
     price: 84500,
     stock: 40,
     brand: "bosch",
+    rate: 9,
     category: "herramientas electricas",
   },
   {
@@ -365,6 +381,7 @@ export const productsData = [
     price: 150000,
     stock: 50,
     brand: "bosch",
+    rate: 9,
     category: "herramientas a bateria",
   },
   {
@@ -382,6 +399,7 @@ export const productsData = [
     price: 405000,
     stock: 30,
     brand: "bosch",
+    rate: 9,
     category: "herramientas a bateria",
   },
   {
@@ -401,6 +419,7 @@ export const productsData = [
     price: 75000,
     stock: 50,
     brand: "bosch",
+    rate: 8,
     category: "herramientas electricas",
   },
   {
@@ -419,6 +438,7 @@ export const productsData = [
     price: 170000,
     stock: 50,
     brand: "bosch",
+    rate: 8,
     category: "herramientas a bateria",
   },
   {
@@ -437,6 +457,7 @@ export const productsData = [
     price: 330000,
     stock: 80,
     brand: "dewalt",
+    rate: 8,
     category: "herramientas a bateria",
   },
   {
@@ -455,6 +476,7 @@ export const productsData = [
     price: 80000,
     stock: 70,
     brand: "dewalt",
+    rate: 8,
     category: "herramientas electricas",
   },
   {
@@ -475,6 +497,7 @@ export const productsData = [
     price: 300000,
     stock: 50,
     brand: "dewalt",
+    rate: 2,
     category: "herramientas a bateria",
   },
   {
@@ -499,6 +522,7 @@ export const productsData = [
     price: 150000,
     stock: 60,
     brand: "dewalt",
+    rate: 5,
     category: "herramientas electricas",
   },
   {
@@ -517,6 +541,7 @@ export const productsData = [
     price: 450000,
     stock: 50,
     brand: "dewalt",
+    rate: 5,
     category: "herramientas a bateria",
   },
   {
@@ -535,6 +560,7 @@ export const productsData = [
     price: 532500,
     stock: 60,
     brand: "stanley",
+    rate: 6,
     category: "herramientas a bateria",
   },
   {
@@ -552,6 +578,7 @@ export const productsData = [
     price: 75000,
     stock: 100,
     brand: "stanley",
+    rate: 3,
     category: "herramientas electricas",
   },
   {
@@ -566,6 +593,7 @@ export const productsData = [
     price: 12000,
     stock: 120,
     brand: "stanley",
+    rate: 4,
     category: "herramientas manuales",
   },
   {
@@ -580,6 +608,7 @@ export const productsData = [
     price: 9000,
     stock: 130,
     brand: "stanley",
+    rate: 4,
     category: "herramientas manuales",
   },
   {
@@ -604,6 +633,7 @@ export const productsData = [
     price: 63599,
     stock: 50,
     brand: "lusqtoff",
+    rate: 9,
     category: "herramientas electricas",
   },
   {
@@ -620,6 +650,7 @@ export const productsData = [
     price: 25000,
     stock: 100,
     brand: "stanley",
+    rate: 9,
     category: "herramientas manuales",
   },
   {
@@ -642,6 +673,7 @@ export const productsData = [
     price: 130599,
     stock: 90,
     brand: "stanley",
+    rate: 8,
     category: "herramientas manuales",
   },
   {
@@ -658,6 +690,7 @@ export const productsData = [
     price: 35500,
     stock: 100,
     brand: "stanley",
+    rate: 7,
     category: "herramientas manuales",
   },
   {
@@ -671,6 +704,7 @@ export const productsData = [
     price: 93000,
     stock: 50,
     brand: "stanley",
+    rate: 6,
     category: "herramientas manuales",
   },
   {
@@ -681,6 +715,7 @@ export const productsData = [
     price: 155000,
     stock: 40,
     brand: "lusqtoff",
+    rate: 6,
     category: "herramientas manuales",
   },
   {
@@ -701,6 +736,7 @@ export const productsData = [
     price: 174700,
     stock: 30,
     brand: "lusqtoff",
+    rate: 5,
     category: "herramientas manuales",
   },
   {
@@ -722,6 +758,7 @@ export const productsData = [
     price: 319950,
     stock: 50,
     brand: "karcher",
+    rate: 10,
     category: "hidrolavadoras",
   },
   {
@@ -741,6 +778,7 @@ export const productsData = [
     price: 236133,
     stock: 40,
     brand: "karcher",
+    rate: 9,
     category: "hidrolavadoras",
   },
   {
@@ -760,6 +798,7 @@ export const productsData = [
     price: 115599,
     stock: 60,
     brand: "whurt",
+    rate: 8.8,
     category: "compresores y neumaticas",
   },
   {
@@ -781,6 +820,7 @@ export const productsData = [
     price: 222854,
     stock: 50,
     brand: "whurt",
+    rate: 5,
     category: "compresores y neumaticas",
   },
 ];

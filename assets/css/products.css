@@ -34,16 +34,25 @@ section.productos {
   grid-template-columns: repeat(3, 30%);
   /* border: 1px solid green; */
   display: grid;
-  width: 100%;
+  width: 100vw;
+  max-width: 950px;
   align-items: center;
   grid-gap: 3rem;
   column-gap: 2rem;
   row-gap: 4rem;
 }
-.filtro--brand img:hover {
+p.container--message {
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  padding: 7rem 0;
+  width: 51rem;
+}
+.brand input:checked ~ label > img,
+.brand img:hover {
   scale: 1.1;
 }
-.filtro--brand img {
+.brand img {
   width: 80px;
   transition: all 0.5s;
 }
@@ -88,6 +97,10 @@ section.productos {
 }
 .filtro--price label:hover,
 .filtro--rating label:hover {
+  text-decoration: underline;
+}
+.filter input:checked ~ label,
+.filter input:checked ~ label {
   text-decoration: underline;
 }
 .filtro--price label,
