@@ -14,7 +14,7 @@ class ShopCart {
     cartBuyer
   ) {
     this.cart = JSON.parse(localStorage.getItem("cart")) || [];
-    this.jsConfetti = new JSConfetti();
+    // this.jsConfetti = new JSConfetti();
     this.headerBox = headerBox;
     this.shopCart = shopCart;
     this.cartContainer = cartContainer;
