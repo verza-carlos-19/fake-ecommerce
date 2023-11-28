@@ -1,4 +1,4 @@
-import JSConfetti from "../../node_modules/js-confetti/dist/es/index.js";
+// import JSConfetti from "../../node_modules/js-confetti/dist/es/index.js";
 import { productsData } from "./data.js";
 import { createCartProductTemplate } from "./renderProduct.js";
 import { formatPrice, showToarts } from "./utils.js";
@@ -110,11 +110,12 @@ class ShopCart {
       this.resetCartItems();
     }, 2500);
     this.cartContainer.innerHTML = `<p>¡gracias por su compra!</p>`;
-    this.jsConfetti.addConfetti({
-      emojis: ["💸", "💵", "💴", "💶", "💷"],
-      emojiSize: 40,
-      confettiNumber: 80,
-    });
+    showToarts(this.cartContainer, "gracias por la compra");
+    // this.jsConfetti.addConfetti({
+    //   emojis: ["💸", "💵", "💴", "💶", "💷"],
+    //   emojiSize: 40,
+    //   confettiNumber: 80,
+    // });
   };
   renderProductCart = () => {
     if (!this.cart.length) {
