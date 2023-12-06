@@ -16,6 +16,7 @@ const totalCart = document.querySelector(".total--price");
 const searchForm = document.querySelector(".head--search");
 const searchInput = document.querySelector(".head--search--input");
 const searchDisplay = document.querySelector(".display--results");
+const containerSponsors = document.querySelector(".main__sponsors--scroll");
 const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const params = new URLSearchParams(window.location.search);
 const idProduct = params.get("id");
@@ -29,6 +30,21 @@ const carrito = new ShopCart(
   cartBuyer,
   true
 );
+
+const goBrand = (e) => {
+  if (!e.target.classList.contains("sponsor-brand")) return;
+  const results = productsData.filter((product) => {
+    return product.brand === e.target.dataset.brand;
+  });
+  localStorage.setItem("searcheads", JSON.stringify(results));
+  const informacion = {
+    boolean: true,
+    boolbrand: true,
+  };
+  const queryParams = new URLSearchParams(informacion).toString();
+  const urlDestino = "./products.html?" + queryParams;
+  window.location.href = urlDestino;
+};
 
 const renderPage = (id) => {
   const product = productsData.find((item) => item.id === Number(id));
@@ -60,6 +76,7 @@ const initProducts = (e) => {
 };
 const init = () => {
   document.addEventListener("click", initProducts);
+  containerSponsors.addEventListener("click", goBrand);
   renderPage(idProduct);
   carrito.init();
   searcher.init();

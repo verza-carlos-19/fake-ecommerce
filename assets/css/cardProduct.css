@@ -38,6 +38,20 @@ button.card--btn {
   padding: 0.4rem 0.8rem;
   transition: all 0.4s ease-in-out;
 }
+button.card--btn.card--buttonbuy:hover {
+  background: #faff6b;
+  color: #000000;
+  width: 60%;
+  font-weight: 600;
+  border-color: rgb(5 5 5);
+  border-bottom: 2px solid white;
+}
+button.card--btn.card--btnsmd:hover {
+  border-color: #faff6b;
+  border-bottom-color: white;
+  background: #10100b;
+  color: #faff6b;
+}
 .producto--info {
   overflow: hidden;
   /* border: 1px solid; */

@@ -1,10 +1,11 @@
 import ShopCart from "./assets/js/cartLogic.js";
-import { appState } from "./assets/js/data.js";
+import { appState, productsData } from "./assets/js/data.js";
 import { renderProducts } from "./assets/js/renderProduct.js";
 import SearcherProds from "./assets/js/searchLogic.js";
 import { goProduct, obtenerNumeroAleatorio } from "./assets/js/utils.js";
 
 const containerProds = document.querySelector(".main__productos--box");
+const containerSponsors = document.querySelector(".main__sponsors--scroll");
 const headerBox = document.querySelector(".header--head");
 const searchForm = document.querySelector(".head--search");
 const searchInput = document.querySelector(".head--search--input");
@@ -32,6 +33,20 @@ const renderProductInit = () => {
     containerProds
   );
 };
+const goBrand = (e) => {
+  if (!e.target.classList.contains("sponsor-brand")) return;
+  const results = productsData.filter((product) => {
+    return product.brand === e.target.dataset.brand;
+  });
+  localStorage.setItem("searcheads", JSON.stringify(results));
+  const informacion = {
+    boolean: true,
+    boolbrand: true,
+  };
+  const queryParams = new URLSearchParams(informacion).toString();
+  const urlDestino = "./products.html?" + queryParams;
+  window.location.href = urlDestino;
+};
 const goProducts = (e) => {
   if (!e.target.classList.contains("main--productos-show")) return;
   window.location.href = "./products.html";
@@ -57,6 +72,7 @@ const init = () => {
   document.addEventListener("click", goProducts);
   renderProductInit();
   containerProds.addEventListener("click", initProducts);
+  containerSponsors.addEventListener("click", goBrand);
   carrito.init();
   searcher.init();
 };
