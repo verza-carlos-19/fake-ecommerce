@@ -40,7 +40,6 @@ article.product__head--info {
   grid-area: info;
   display: flex;
   flex-direction: column;
-  /* gap: 0rem; */
   justify-content: space-evenly;
 }
 .product__head--info span {
@@ -70,17 +69,27 @@ article.product__head--info {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: end;
+  width: 33rem;
+  overflow: hidden;
+  padding: 0 2rem;
+  /* align-items: end; */
 }
 
 .product__head--portada {
   grid-area: img;
   display: flex;
-  justify-content: end;
   padding-right: 2rem;
+  gap: 2rem;
+  width: fit-content;
+  padding: 0rem 2rem;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+  position: relative;
+  z-index: -2;
+  left: 0;
 }
 .product__head--portada img {
-  width: 70%;
+  width: 22rem;
   margin: 2rem;
   filter: drop-shadow(0 0 1rem black);
 }
@@ -88,11 +97,21 @@ article.product__head--info {
   grid-area: img;
   display: flex;
   gap: 2rem;
-  padding-right: 3rem;
+  width: 100%;
+  justify-content: end;
+  padding-bottom: 2rem;
 }
 .product__head--gallery img {
   width: 4rem;
   height: 4rem;
+  transition: all 0.5s ease;
+}
+.first--port {
+  box-shadow: inset 0px -25px 20px -28px white, 23px 30px 11px -26px white,
+    11px 20px 20px -22px white, -24px 30px 11px -26px white,
+    -12px 30px 11px -26px white, 1px 29px 11px -26px white,
+    12px 29px 11px -26px white, -3px 29px 11px -26px white;
+  border-bottom: 2px solid white;
 }
 
 /*----------------------------------estilos de foot product -----------------------------------*/
@@ -125,7 +144,9 @@ button.btn--add:hover {
   width: fit-content;
   box-shadow: 0 0 17px #ffffff00, inset 0 0 6px black;
 }
-
+.box--brand img {
+  max-width: 13rem;
+}
 p.stock--quantity {
   padding: 0rem 0rem 1rem;
 }

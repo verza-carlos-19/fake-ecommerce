@@ -791,11 +791,41 @@
       <section class="main--contacto" id="contacto">
         <h2>contactanos</h2>
         <form class="main__contacto--form">
-          <input type="text" placeholder="nombre" />
-          <input type="tel" placeholder="telefono" />
-          <input type="text" name="" id="" placeholder="motivo" />
-          <textarea placeholder="mensaje"></textarea>
-          <button>enviar</button>
+          <div class="form--field nombre">
+            <input
+              type="text"
+              placeholder="Nombre Completo"
+              class="contacto__form--name"
+            />
+          </div>
+          <div class="form--field telefono">
+            <input
+              type="tel"
+              placeholder="telefono"
+              class="contacto__form--tel"
+            />
+          </div>
+          <div class="form--field email">
+            <input
+              type="email"
+              placeholder="Email"
+              class="contacto__form--email"
+            />
+          </div>
+          <div class="form--field asunto">
+            <input
+              type="text"
+              placeholder="motivo"
+              class="contacto__form--asunt"
+            />
+          </div>
+          <div class="form--field mensaje">
+            <textarea
+              placeholder="mensaje"
+              class="contacto__form--message"
+            ></textarea>
+          </div>
+          <button type="submit">enviar</button>
         </form>
       </section>
     </main>

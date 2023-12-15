@@ -4,6 +4,7 @@ import {
   formatBrand,
   createGallery,
   createListCaracts,
+  createGalleryPortada,
 } from "./utils.js";
 
 export const createDiplayProductTemplate = (product) => {
@@ -56,6 +57,7 @@ const createTemplateProductSingle = (product) => {
   const marca = formatBrand(brand);
   const lista = createListCaracts(ficha);
   const galleria = createGallery(images);
+  const galleriaPortada = createGalleryPortada(images);
   const template = `        <div class="product--head">
   <h1>${title}</h1>
   <article class="product__head--info">
@@ -63,9 +65,7 @@ const createTemplateProductSingle = (product) => {
     <span>${precio}</span>
   </article>
   <div class="product__head--img">
-    <div class="product__head--portada">
-      <img src="${images[0]}" alt="${title}">
-    </div>
+    ${galleriaPortada}
     ${galleria}
   </div>
 </div>
@@ -79,13 +79,13 @@ const createTemplateProductSingle = (product) => {
       <span class="material-symbols-outlined quantity-handler--remove" data-id='${id}'>
         remove
       </span>
-      <input type="num" value="1" class="quantity-handler--display" disabled />
-      <span class="material-symbols-outlined quantity-handler--add" data-id='${id}'>
+      <input type="num" value="1" class="quantity-handler--display"data-stock='${stock}' disabled />
+      <span class="material-symbols-outlined quantity-handler--add"data-stock='${stock}' data-id='${id}'>
         add
         </span>
     </div>
   </div> 
-  <button class="btn--add card--buttonbuy" data-id='${id}'>comprar</button>
+  <button class="btn--add card--buttonbuy button--buyMult" data-id='${id}'data-stock='${stock}'>comprar</button>
 </div>`;
   return template;
 };
@@ -103,7 +103,7 @@ const createTemplateProduct = (product) => {
       <span>${precio}</span>
       <div class="card--btns">
         <button class="card--btn card--buttonbuy" data-id='${id}' data-stock='${stock}'>comprar</button
-        ><button class="card--btn card--btnsmd" data-id='${id}'>detalles</button>
+        ><button class="card--btn card--btnsmd" data-id='${id}'data-stock='${stock}'>detalles</button>
       </div>
     </div>
     </div>

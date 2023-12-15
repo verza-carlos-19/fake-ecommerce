@@ -2,7 +2,8 @@ import ShopCart from "./cartLogic.js";
 import { appState, productsData } from "./data.js";
 import { renderProducts } from "./renderProduct.js";
 import SearcherProds from "./searchLogic.js";
-import { obtenerNumeroAleatorio } from "./utils.js";
+import { SponsorScroller } from "./sponsorLogic.js";
+import { goProduct, goProductSingle, obtenerNumeroAleatorio } from "./utils.js";
 
 const containerProds = document.querySelector(".main__productos--box");
 const containerProduct = document.querySelector(".container--product");
@@ -16,7 +17,6 @@ const totalCart = document.querySelector(".total--price");
 const searchForm = document.querySelector(".head--search");
 const searchInput = document.querySelector(".head--search--input");
 const searchDisplay = document.querySelector(".display--results");
-const containerSponsors = document.querySelector(".main__sponsors--scroll");
 const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const params = new URLSearchParams(window.location.search);
 const idProduct = params.get("id");
@@ -31,21 +31,46 @@ const carrito = new ShopCart(
   true
 );
 
-const goBrand = (e) => {
-  if (!e.target.classList.contains("sponsor-brand")) return;
-  const results = productsData.filter((product) => {
-    return product.brand === e.target.dataset.brand;
-  });
-  localStorage.setItem("searcheads", JSON.stringify(results));
-  const informacion = {
-    boolean: true,
-    boolbrand: true,
-  };
-  const queryParams = new URLSearchParams(informacion).toString();
-  const urlDestino = "./products.html?" + queryParams;
-  window.location.href = urlDestino;
+const quantityHandler = (e) => {
+  const button = e.target;
+  if (button.classList.contains("quantity-handler--add")) {
+    const stock = button.dataset.stock;
+    let quantity = button.parentNode.querySelector(
+      ".quantity-handler--display"
+    ).value;
+    if (Number(quantity) >= Number(stock)) {
+      return;
+    }
+    button.parentNode.querySelector(".quantity-handler--display").value++;
+  } else if (button.classList.contains("quantity-handler--remove")) {
+    const stock = button.dataset.stock;
+    const quantity = button.parentNode.querySelector(
+      ".quantity-handler--display"
+    ).value;
+    if (quantity <= 1) {
+      return;
+    }
+    button.parentNode.querySelector(".quantity-handler--display").value--;
+  } else {
+    return;
+  }
 };
-
+const slider = (e) => {
+  if (!e.target.classList.contains("tumblr")) return;
+  const image = e.target;
+  const imageSiblings = image.parentNode.children;
+  for (let i = 0; i < imageSiblings.length; i++) {
+    imageSiblings[i].style.boxShadow = "none";
+    imageSiblings[i].style.borderBottom = "none";
+  }
+  image.style.boxShadow =
+    "inset 0px -27px 20px -28px white, 23px 30px 11px -26px white, 11px 20px 20px -22px white, -24px 30px 11px -26px white, -12px 30px 11px -26px white, 1px 29px 11px -26px white, 12px 29px 11px -26px white, -3px 29px 11px -26px white";
+  image.style.borderBottom = "2px solid white";
+  const imagesContainer = image.parentNode.previousElementSibling;
+  const id = e.target.dataset.id;
+  imagesContainer.style.left = `${-29 * id}rem`;
+  return;
+};
 const renderPage = (id) => {
   const product = productsData.find((item) => item.id === Number(id));
   renderProducts(product, containerProduct, true);
@@ -58,13 +83,19 @@ const renderPage = (id) => {
   );
 };
 const buyProduct = (e) => {
-  const id = e.target.dataset.id;
-  carrito.buyItem(id);
+  const button = e.target;
+  const id = button.dataset.id;
+  const stock = button.dataset.stock;
+  if (button.classList.contains("button--buyMult")) {
+    const quantity = button.previousElementSibling
+      .querySelector(".quantity-handler")
+      .querySelector(".quantity-handler--display").value;
+    carrito.buyItem(id, stock, Number(quantity));
+  } else {
+    carrito.buyItem(id, stock, 1);
+  }
 };
-const goProduct = (e) => {
-  const id = e.target.dataset.id;
-  goProductSingle(id, false);
-};
+
 const initProducts = (e) => {
   if (e.target.classList.contains("card--btnsmd")) {
     goProduct(e);
@@ -76,9 +107,10 @@ const initProducts = (e) => {
 };
 const init = () => {
   document.addEventListener("click", initProducts);
-  containerSponsors.addEventListener("click", goBrand);
   renderPage(idProduct);
   carrito.init();
   searcher.init();
+  document.addEventListener("click", slider);
+  document.addEventListener("click", quantityHandler);
 };
 init();

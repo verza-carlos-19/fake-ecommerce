@@ -23,10 +23,29 @@ export const formatBrand = (brand) => {
 export const createGallery = (list) => {
   const lista = document.createElement("div");
   lista.classList.add("product__head--gallery");
+  let count = 0;
   list.forEach((img) => {
     const src = img;
     const image = document.createElement("img");
     image.src = src;
+    image.classList = "tumblr";
+    image.dataset.id = count;
+    lista.appendChild(image);
+    if (count === 0) {
+      image.classList = "tumblr first--port";
+    }
+    count++;
+  });
+  return lista.outerHTML;
+};
+export const createGalleryPortada = (list) => {
+  const lista = document.createElement("div");
+  lista.classList.add("product__head--portada");
+  list.forEach((img) => {
+    const src = img;
+    const image = document.createElement("img");
+    image.src = src;
+    image.classList = "portada";
     lista.appendChild(image);
   });
   return lista.outerHTML;
@@ -53,13 +72,14 @@ export const goProductSingle = (id) => {
 export const showToarts = (container, msg) => {
   const toarst = document.createElement("div");
   toarst.classList.add("toarts");
-  toarst.innerHTML = `<p>${msg}</p>`;
+  toarst.innerHTML = `<p>${msg} </p>`;
   container.appendChild(toarst);
   setTimeout(() => {
     container.removeChild(toarst);
   }, 2000);
   return;
 };
+
 export const goProduct = (e) => {
   const id = e.target.dataset.id;
   goProductSingle(id, false);

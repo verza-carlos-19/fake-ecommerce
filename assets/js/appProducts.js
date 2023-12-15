@@ -1,15 +1,15 @@
-import { appState, productsData } from "./data.js";
+import { appState } from "./data.js";
 import { renderProducts } from "./renderProduct.js";
 import ShopCart from "./cartLogic.js";
-import { goProductSingle, showToarts } from "./utils.js";
+import { goProductSingle } from "./utils.js";
 import SearcherProds from "./searchLogic.js";
 import { Filter } from "./boxFilter.js";
+// import { SponsorScroller } from "./sponsorLogic.js";
 
 const containerProds = document.querySelector(".productos--container");
 const headerBox = document.querySelector(".header--head");
 const shopCart = document.querySelector(".cart--shop");
-
-const containerSponsors = document.querySelector(".main__sponsors--scroll");
+// const containerSponsors = document.querySelector(".main__sponsors--scroll");
 const cartBubble = document.querySelector(".head__cart--bubble");
 const cartContainer = document.querySelector(".products--cart");
 const cartCleaner = document.querySelector(".cart--empty");
@@ -33,6 +33,7 @@ const boolean = params.get("boolean");
 const boolBrand = params.get("boolbrand");
 const Prodsearcheads = JSON.parse(localStorage.getItem("searcheads")) || [];
 const termSearcheads = JSON.parse(localStorage.getItem("termSearcheads")) || [];
+// const scrollerSponsors = new SponsorScroller(containerSponsors);
 const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const carrito = new ShopCart(
   headerBox,
@@ -58,20 +59,6 @@ const filtro = new Filter(
   boolean
 );
 
-const goBrand = (e) => {
-  if (!e.target.classList.contains("sponsor-brand")) return;
-  const results = productsData.filter((product) => {
-    return product.brand === e.target.dataset.brand;
-  });
-  localStorage.setItem("searcheads", JSON.stringify(results));
-  const informacion = {
-    boolean: true,
-    boolbrand: true,
-  };
-  const queryParams = new URLSearchParams(informacion).toString();
-  const urlDestino = "./products.html?" + queryParams;
-  window.location.href = urlDestino;
-};
 const isLastIndexOf = () => {
   return appState.currentProductsIndex === appState.productsLimit - 1;
 };
@@ -104,7 +91,8 @@ const renderInitialize = (boolean) => {
 };
 const buyProduct = (e) => {
   const id = e.target.dataset.id;
-  carrito.buyItem(id);
+  const stock = e.target.dataset.stock;
+  carrito.buyItem(id, stock, 1);
 };
 const goProduct = (e) => {
   const id = e.target.dataset.id;
@@ -121,10 +109,8 @@ const initProducts = (e) => {
 };
 const init = () => {
   renderInitialize(boolean);
-  console.log();
   showMoreBtn.addEventListener("click", renderMoreProducts);
   containerProds.addEventListener("click", initProducts);
-  containerSponsors.addEventListener("click", goBrand);
   carrito.init();
   searcher.init();
   filtro.init();

@@ -30,15 +30,15 @@ class ShopCart {
   saveCart() {
     localStorage.setItem("cart", JSON.stringify(this.cart));
   }
-  handlePlusBtnEvent(id, stock) {
+  handlePlusBtnEvent(id, stock, quantity) {
     const existingCartProduct = this.cart.find(
       (item) => item.id === String(id)
     );
-    if (existingCartProduct.quantity === Number(stock)) {
+    if (existingCartProduct.quantity >= Number(stock)) {
       showToarts(this.cartContainer, "No hay mas stock de este producto");
       return;
     }
-    this.addUnitToProduct(existingCartProduct.id);
+    this.addUnitToProduct(existingCartProduct.id, quantity);
     this.updateCartState();
   }
   handleMinusBtnEvent(id) {
@@ -67,7 +67,7 @@ class ShopCart {
     if (e.target.classList.contains("quantity-handler--remove")) {
       this.handleMinusBtnEvent(e.target.dataset.id);
     } else if (e.target.classList.contains("quantity-handler--add")) {
-      this.handlePlusBtnEvent(e.target.dataset.id, e.target.dataset.stock);
+      this.handlePlusBtnEvent(e.target.dataset.id, e.target.dataset.stock, 1);
     } else if (e.target.classList.contains("quantity-handler--delete")) {
       this.removeProductFromCart(e.target.dataset.id);
     } else {
@@ -129,17 +129,17 @@ class ShopCart {
       .join("");
   };
 
-  createCartProduct(product) {
-    this.cart = [...this.cart, { id: product, quantity: 1 }];
+  createCartProduct(product, quant) {
+    this.cart = [...this.cart, { id: product, quantity: quant }];
   }
   isExistingCartProduct(product) {
     return this.cart.find((item) => item.id === product);
   }
 
-  addUnitToProduct(product) {
+  addUnitToProduct(product, quantity) {
     this.cart = this.cart.map((cartProduct) =>
       cartProduct.id === product
-        ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
+        ? { ...cartProduct, quantity: cartProduct.quantity + quantity }
         : cartProduct
     );
   }
@@ -149,12 +149,12 @@ class ShopCart {
     this.showCartTotal();
     this.saveCart();
   }
-  buyItem(id, stock) {
+  buyItem(id, stock, quantity) {
     if (this.isExistingCartProduct(id)) {
-      this.handlePlusBtnEvent(id, stock);
+      this.handlePlusBtnEvent(id, stock, quantity);
       return;
     } else {
-      this.createCartProduct(id);
+      this.createCartProduct(id, quantity);
       this.updateCartState();
     }
   }
