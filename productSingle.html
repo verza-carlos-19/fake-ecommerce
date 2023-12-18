@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/mediaQueriesProduct.css" />
+    <link rel="stylesheet" href="./assets/css/mediaQueriesGral.css" />
     <link rel="stylesheet" href="./assets/css/cardProduct.css" />
     <link rel="stylesheet" href="./assets/css/singleProduct.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
@@ -31,7 +32,12 @@
         <img
           src="./assets/imgs/logos_marcas/logo-store-black.svg"
           alt="logo"
-          class="head--logo"
+          class="head--logo head--logo--lg"
+        />
+        <img
+          src="./assets/imgs/logos_marcas/logo-store-small.svg"
+          alt="logo"
+          class="head--logo head--logo--sm sm--component"
         />
         <form class="head--search">
           <input type="text" placeholder="Buscar" class="head--search--input" />
@@ -39,7 +45,20 @@
             <span class="material-symbols-outlined"> search </span>
           </button>
           <div class="display--results"></div>
+          <span
+            class="sm--component material-symbols-outlined sm--menu--toggle"
+          >
+            close
+          </span>
         </form>
+        <span
+          class="sm--component material-symbols-outlined sm--searcher--toggle"
+        >
+          search
+        </span>
+        <span class="sm--component material-symbols-outlined sm--menu--burger">
+          menu
+        </span>
         <div class="head--cart">
           <span class="material-symbols-outlined btn--cart">
             shopping_cart
@@ -61,6 +80,9 @@
         </div>
       </section>
       <section class="header--body">
+        <span class="sm--component material-symbols-outlined sm--menu--closer">
+          close
+        </span>
         <nav class="body--navbar">
           <ul class="navbar--list">
             <li class="navbar__list--item">

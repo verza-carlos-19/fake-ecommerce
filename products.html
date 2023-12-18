@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/products.css" />
     <link rel="stylesheet" href="./assets/css/cardProduct.css" />
     <link rel="stylesheet" href="./assets/css/mediaQueriesproducts.css" />
+    <link rel="stylesheet" href="./assets/css/mediaQueriesGral.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +34,12 @@
         <img
           src="./assets/imgs/logos_marcas/logo-store-black.svg"
           alt="logo"
-          class="head--logo"
+          class="head--logo head--logo--lg"
+        />
+        <img
+          src="./assets/imgs/logos_marcas/logo-store-small.svg"
+          alt="logo"
+          class="head--logo head--logo--sm sm--component"
         />
         <form class="head--search">
           <input type="text" placeholder="Buscar" class="head--search--input" />
@@ -41,7 +47,20 @@
             <span class="material-symbols-outlined"> search </span>
           </button>
           <div class="display--results"></div>
+          <span
+            class="sm--component material-symbols-outlined sm--menu--toggle"
+          >
+            close
+          </span>
         </form>
+        <span
+          class="sm--component material-symbols-outlined sm--searcher--toggle"
+        >
+          search
+        </span>
+        <span class="sm--component material-symbols-outlined sm--menu--burger">
+          menu
+        </span>
         <div class="head--cart">
           <span class="material-symbols-outlined btn--cart">
             shopping_cart
@@ -63,6 +82,9 @@
         </div>
       </section>
       <section class="header--body">
+        <span class="sm--component material-symbols-outlined sm--menu--closer">
+          close
+        </span>
         <nav class="body--navbar">
           <ul class="navbar--list">
             <li class="navbar__list--item">

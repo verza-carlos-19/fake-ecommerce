@@ -66,6 +66,10 @@ header {
 .head--logo {
   width: 8rem;
 }
+/* img.head--logo.head--logo--lg {
+  /* display: block; 
+} */
+
 .head--search {
   width: 35rem;
   display: flex;
@@ -176,7 +180,7 @@ span.head__cart--bubble {
   transition: all 0.5s;
   flex-direction: column;
   transform: translateX(100%);
-  /* opacity: 0; */
+  opacity: 0;
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(
@@ -194,7 +198,7 @@ span.head__cart--bubble {
 }
 .show--cart {
   transform: translateX(0%);
-  /* opacity: 1; */
+  opacity: 1;
 }
 .products--cart {
   width: 100%;
@@ -348,6 +352,12 @@ button.total__btn--buy:hover {
   text-transform: capitalize;
   font-family: var(--font7);
   font-size: 1rem;
+}
+.sm--component {
+  display: none;
+  position: absolute;
+  z-index: -2;
+  opacity: 0;
 }
 /*------------------- estilos main--------------------- */
 
@@ -759,6 +769,12 @@ footer {
 }
 footer img {
   width: 13rem;
+}
+img.footer--logo--lg {
+  display: block;
+}
+img.footer--logo--sm {
+  display: none;
 }
 .box--redes a {
   padding: 2rem;

@@ -4,12 +4,12 @@ import ShopCart from "./cartLogic.js";
 import { goProductSingle } from "./utils.js";
 import SearcherProds from "./searchLogic.js";
 import { Filter } from "./boxFilter.js";
-// import { SponsorScroller } from "./sponsorLogic.js";
+import { SponsorScroller } from "./sponsorLogic.js";
 
 const containerProds = document.querySelector(".productos--container");
 const headerBox = document.querySelector(".header--head");
 const shopCart = document.querySelector(".cart--shop");
-// const containerSponsors = document.querySelector(".main__sponsors--scroll");
+const containerSponsors = document.querySelector(".main__sponsors--scroll");
 const cartBubble = document.querySelector(".head__cart--bubble");
 const cartContainer = document.querySelector(".products--cart");
 const cartCleaner = document.querySelector(".cart--empty");
@@ -33,7 +33,7 @@ const boolean = params.get("boolean");
 const boolBrand = params.get("boolbrand");
 const Prodsearcheads = JSON.parse(localStorage.getItem("searcheads")) || [];
 const termSearcheads = JSON.parse(localStorage.getItem("termSearcheads")) || [];
-// const scrollerSponsors = new SponsorScroller(containerSponsors);
+const scrollerSponsors = new SponsorScroller(containerSponsors);
 const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const carrito = new ShopCart(
   headerBox,
@@ -114,6 +114,7 @@ const init = () => {
   carrito.init();
   searcher.init();
   filtro.init();
+  scrollerSponsors.init();
 };
 
 init();

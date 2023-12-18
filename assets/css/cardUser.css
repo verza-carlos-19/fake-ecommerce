@@ -18,6 +18,8 @@
   align-items: center;
   width: 100%;
   scale: 1;
+  backdrop-filter: blur(2px);
+  background-color: #6666664d;
   box-shadow: 5px 6px 20px 0px #ffe2a6ba, inset 0px 0px 20px 4px #ffe2a6,
     0px 0px 1rem 0px #ffe2a62b, 1px 20px 20px 0px #000000;
 }

@@ -35,10 +35,18 @@ class ShopCart {
       (item) => item.id === String(id)
     );
     if (existingCartProduct.quantity >= Number(stock)) {
-      showToarts(this.cartContainer, "No hay mas stock de este producto");
+      showToarts(
+        this.cartContainer,
+        "No hay mas stock de este producto",
+        false
+      );
       return;
     }
-    this.addUnitToProduct(existingCartProduct.id, quantity);
+    this.addUnitToProduct(
+      existingCartProduct.id,
+      Number(quantity),
+      Number(stock)
+    );
     this.updateCartState();
   }
   handleMinusBtnEvent(id) {
@@ -135,11 +143,20 @@ class ShopCart {
   isExistingCartProduct(product) {
     return this.cart.find((item) => item.id === product);
   }
-
-  addUnitToProduct(product, quantity) {
+  maxUnitsProduct(stock, currQuant, quantToPlus) {
+    return Math.min(stock, currQuant + quantToPlus);
+  }
+  addUnitToProduct(product, quantity, stock) {
     this.cart = this.cart.map((cartProduct) =>
       cartProduct.id === product
-        ? { ...cartProduct, quantity: cartProduct.quantity + quantity }
+        ? {
+            ...cartProduct,
+            quantity: this.maxUnitsProduct(
+              Number(stock),
+              Number(cartProduct.quantity),
+              Number(quantity)
+            ),
+          }
         : cartProduct
     );
   }

@@ -8,6 +8,7 @@ import { goProduct, obtenerNumeroAleatorio } from "./assets/js/utils.js";
 
 const containerProds = document.querySelector(".main__productos--box");
 const containerSponsors = document.querySelector(".main__sponsors--scroll");
+const scrollerSponsors = new SponsorScroller(containerSponsors);
 const headerBox = document.querySelector(".header--head");
 const searchForm = document.querySelector(".head--search");
 const searchInput = document.querySelector(".head--search--input");
@@ -44,7 +45,6 @@ const formulario = new Form(
   formEmail,
   formMessage
 );
-const scrollerSponsors = new SponsorScroller(containerSponsors);
 const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const carrito = new ShopCart(
   headerBox,

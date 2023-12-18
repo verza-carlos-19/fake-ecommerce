@@ -17,6 +17,8 @@ const totalCart = document.querySelector(".total--price");
 const searchForm = document.querySelector(".head--search");
 const searchInput = document.querySelector(".head--search--input");
 const searchDisplay = document.querySelector(".display--results");
+const containerSponsors = document.querySelector(".main__sponsors--scroll");
+const scrollerSponsors = new SponsorScroller(containerSponsors);
 const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const params = new URLSearchParams(window.location.search);
 const idProduct = params.get("id");
@@ -110,6 +112,7 @@ const init = () => {
   renderPage(idProduct);
   carrito.init();
   searcher.init();
+  scrollerSponsors.init();
   document.addEventListener("click", slider);
   document.addEventListener("click", quantityHandler);
 };
