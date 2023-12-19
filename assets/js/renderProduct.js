@@ -60,14 +60,15 @@ const createTemplateProductSingle = (product) => {
   const galleriaPortada = createGalleryPortada(images);
   const template = `        <div class="product--head">
   <h1>${title}</h1>
+  <div class="product__head--img">
+  <h1 class="title--sm">${title}</h1>
+  ${galleriaPortada}
+  ${galleria}
+  </div>
   <article class="product__head--info">
   ${lista}
-    <span>${precio}</span>
+  <span>${precio}</span>
   </article>
-  <div class="product__head--img">
-    ${galleriaPortada}
-    ${galleria}
-  </div>
 </div>
 <div class="product--foot">
   <div class="box--brand">

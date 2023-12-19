@@ -74,7 +74,9 @@ article.product__head--info {
   padding: 0 2rem;
   /* align-items: end; */
 }
-
+.title--sm {
+  display: none;
+}
 .product__head--portada {
   grid-area: img;
   display: flex;
