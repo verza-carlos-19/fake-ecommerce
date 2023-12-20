@@ -31,6 +31,8 @@ const formPhone = document.querySelector(".contacto__form--tel");
 const formAsunt = document.querySelector(".contacto__form--asunt");
 const formEmail = document.querySelector(".contacto__form--email");
 const formMessage = document.querySelector(".contacto__form--message");
+const menuBurger = document.querySelector(".header--body");
+
 const formulario = new Form(
   formContainer,
   form,
@@ -55,7 +57,28 @@ const carrito = new ShopCart(
   cartBubble,
   cartBuyer
 );
-
+const toggleBurgerSm = (e) => {
+  if (e.target.classList.contains("sm--menu--burger")) {
+    shopCart.classList.remove("show--cart");
+    searchForm.classList.remove("open");
+    menuBurger.classList.toggle("open");
+    return;
+  } else if (e.target.classList.contains("sm--searcher--toggle")) {
+    menuBurger.classList.remove("open");
+    shopCart.classList.remove("show--cart");
+    searchForm.classList.toggle("open");
+    return;
+  } else if (e.target.classList.contains("btn--cart")) {
+    menuBurger.classList.remove("open");
+    searchForm.classList.remove("open");
+    return;
+  } else if (e.target.classList.contains("navbarToggles")) {
+    menuBurger.classList.remove("open");
+    return;
+  } else {
+    return;
+  }
+};
 const renderProductInit = () => {
   renderProducts(
     appState.productsShorts[obtenerNumeroAleatorio()],
@@ -85,6 +108,7 @@ const initProducts = (e) => {
 
 const init = () => {
   document.addEventListener("click", goProducts);
+  document.addEventListener("click", toggleBurgerSm);
   renderProductInit();
   containerProds.addEventListener("click", initProducts);
   carrito.init();
