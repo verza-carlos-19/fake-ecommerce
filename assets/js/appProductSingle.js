@@ -18,6 +18,7 @@ const searchForm = document.querySelector(".head--search");
 const searchInput = document.querySelector(".head--search--input");
 const searchDisplay = document.querySelector(".display--results");
 const containerSponsors = document.querySelector(".main__sponsors--scroll");
+const menuBurger = document.querySelector(".header--body");
 const scrollerSponsors = new SponsorScroller(containerSponsors);
 const searcher = new SearcherProds(searchForm, searchInput, searchDisplay);
 const params = new URLSearchParams(window.location.search);
@@ -32,7 +33,28 @@ const carrito = new ShopCart(
   cartBuyer,
   true
 );
-
+const toggleBurgerSm = (e) => {
+  if (e.target.classList.contains("sm--menu--burger")) {
+    shopCart.classList.remove("show--cart");
+    searchForm.classList.remove("open");
+    menuBurger.classList.toggle("open");
+    return;
+  } else if (e.target.classList.contains("sm--searcher--toggle")) {
+    menuBurger.classList.remove("open");
+    shopCart.classList.remove("show--cart");
+    searchForm.classList.toggle("open");
+    return;
+  } else if (e.target.classList.contains("btn--cart")) {
+    menuBurger.classList.remove("open");
+    searchForm.classList.remove("open");
+    return;
+  } else if (e.target.classList.contains("navbarToggles")) {
+    menuBurger.classList.remove("open");
+    return;
+  } else {
+    return;
+  }
+};
 const quantityHandler = (e) => {
   const button = e.target;
   if (button.classList.contains("quantity-handler--add")) {
@@ -115,5 +137,7 @@ const init = () => {
   scrollerSponsors.init();
   document.addEventListener("click", slider);
   document.addEventListener("click", quantityHandler);
+
+  document.addEventListener("click", toggleBurgerSm);
 };
 init();

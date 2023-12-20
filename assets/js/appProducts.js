@@ -28,6 +28,7 @@ const brandFilters = document.querySelectorAll(".brandFilter");
 const comboboxFilter = document.querySelector("#combobox");
 const searchInput = document.querySelector(".head--search--input");
 const searchDisplay = document.querySelector(".display--results");
+const menuBurger = document.querySelector(".header--body");
 const params = new URLSearchParams(window.location.search);
 const boolean = params.get("boolean");
 const boolBrand = params.get("boolbrand");
@@ -58,7 +59,28 @@ const filtro = new Filter(
   comboboxFilter,
   boolean
 );
-
+const toggleBurgerSm = (e) => {
+  if (e.target.classList.contains("sm--menu--burger")) {
+    shopCart.classList.remove("show--cart");
+    searchForm.classList.remove("open");
+    menuBurger.classList.toggle("open");
+    return;
+  } else if (e.target.classList.contains("sm--searcher--toggle")) {
+    menuBurger.classList.remove("open");
+    shopCart.classList.remove("show--cart");
+    searchForm.classList.toggle("open");
+    return;
+  } else if (e.target.classList.contains("btn--cart")) {
+    menuBurger.classList.remove("open");
+    searchForm.classList.remove("open");
+    return;
+  } else if (e.target.classList.contains("navbarToggles")) {
+    menuBurger.classList.remove("open");
+    return;
+  } else {
+    return;
+  }
+};
 const isLastIndexOf = () => {
   return appState.currentProductsIndex === appState.productsLimit - 1;
 };
@@ -115,6 +137,8 @@ const init = () => {
   searcher.init();
   filtro.init();
   scrollerSponsors.init();
+
+  document.addEventListener("click", toggleBurgerSm);
 };
 
 init();

@@ -135,3 +135,49 @@
     letter-spacing: 0px;
   }
 }
+@media (max-width: 450px) {
+  section.productos {
+    margin-top: 7rem;
+    gap: 7rem;
+  }
+  .filtro--brand {
+    width: 90vw;
+    display: flex;
+    padding: 1vw 0 0 0;
+    gap: 0.3rem;
+    flex-direction: column;
+  }
+  .box--filtros {
+    justify-content: center;
+  }
+  .box--filtros h3 {
+    font-family: var(--font7);
+    letter-spacing: 1px;
+    font-weight: 600;
+    display: block;
+    font-size: 3.6vw;
+  }
+  .marcas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  select#combobox {
+    width: 40vw;
+  }
+  button.btn--filtrar {
+    width: 25vw;
+    font-size: 4vw;
+    height: fit-content;
+    border: 2px solid transparent;
+    border-bottom: 2px solid white;
+  }
+
+  .productos--container {
+    gap: 6rem;
+  }
+  button.showMoreBtn {
+    width: 34vw;
+  }
+}

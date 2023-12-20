@@ -385,6 +385,18 @@
   .open {
     transform: translateY(0px);
   }
+  .toarts {
+    position: absolute;
+    left: 10px;
+    bottom: 8.3rem;
+    z-index: 3;
+    border: 1px solid white;
+    padding: 0.7rem;
+    border-radius: 4px;
+    background: #000000;
+    box-shadow: 0px 0px 30px -9px white, inset 0px -7px 20px -12px white;
+    animation: fadeUp 2s 1 linear;
+  }
   .navbar--list {
     display: flex;
     justify-content: center;
